@@ -244,6 +244,8 @@ def get_transcode_dir(flac_dir, output_dir, output_format, resample):
             # e.g. "24 days in 96 castles - [24-96]" would become "16 days in 44 castles - [16-44]"
             transcode_dir = transcode_dir.replace('24', '16')
             transcode_dir = transcode_dir.replace('96', '48')
+        elif '24' in flac_dir:
+            transcode_dir = transcode_dir.replace('24', '16')
         else:
             transcode_dir += " [16-44]"
 
